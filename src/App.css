@@ -43,6 +43,10 @@ button:hover {
 .Navbar .leftSide button {
   display: none;
   margin-left: 20px;
+  background-color: #021e39;
+  text-size: 25px;
+  color: white;
+  border: none;
 }
 
 .Navbar .leftSide #hidden {
@@ -102,7 +106,7 @@ button:hover {
     left: 0px;
     top: 80px;
     height: auto;
-    max-height: 200px;
+    max-height: 230px;
     width: 100%;
     background-color: #021e39;
     display: flex;
