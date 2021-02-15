@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../App.css";
 import ReorderIcon from "@material-ui/icons/Reorder";
 import SearchIcon from "@material-ui/icons/Search";
+import Card from "./Card.js";
 
 function Navbar() {
   const [showLinks, setShowLinks] = useState(false);
@@ -16,9 +17,7 @@ function Navbar() {
         .then((res) => res.json())
         .then((res) => {
           //return error if code: 402
-          console.log(res);
-          setresults(res.results);
-          console.log(results);
+          setresults(res["results"]);
         });
     } catch (e) {}
   }
@@ -51,7 +50,9 @@ function Navbar() {
         </div>
       </div>
       <div id="datafield">
-        <p> {data} </p>
+        {results.map((ele) => (
+          <Card title={ele.title} image={ele.image} key={ele.id} />
+        ))}
       </div>
     </div>
   );
