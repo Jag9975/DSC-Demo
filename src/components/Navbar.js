@@ -18,6 +18,7 @@ function Navbar() {
         .then((res) => res.json())
         .then((res) => {
           //return error if code: 402
+          console.log(res["results"]);
           setresults(res["results"]);
         });
     } catch (e) {}
