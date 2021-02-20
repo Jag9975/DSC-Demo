@@ -3,6 +3,7 @@ import "../App.css";
 import ReorderIcon from "@material-ui/icons/Reorder";
 import SearchIcon from "@material-ui/icons/Search";
 import Card from "./Card.js";
+import { Row } from "react-bootstrap";
 
 function Navbar() {
   const [showLinks, setShowLinks] = useState(false);
@@ -49,10 +50,19 @@ function Navbar() {
           </button>
         </div>
       </div>
-      <div id="datafield">
-        {results.map((ele) => (
-          <Card title={ele.title} image={ele.image} key={ele.id} />
-        ))}
+
+      <div>
+        <Row
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            margin: "0.05em"
+          }}
+        >
+          {results.map((ele) => (
+            <Card title={ele.title} image={ele.image} key={ele.id} />
+          ))}
+        </Row>
       </div>
     </div>
   );
